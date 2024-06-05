@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  /* height: 100vh;
+  background-color: antiquewhite; */
+}
+video {
+  height: 100vh;
+  width: 100vh;
+  z-index: -1;
+  min-height: 100%;
+  min-width: 100%;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+}
+
+/* * {
+      border: 1px solid rgb(0, 255, 255);
+    } */
+
+.flex {
+  display: flex;
+}
+
+.baise {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.mg8 {
+  margin: 8px;
+}
+
+.mgr8 {
+  margin-right: 8px;
+}
+
+.mgl8 {
+  margin-left: 8px;
+}
+
+.mgt8 {
+  margin-top: 8px;
+}
+
+/* 阴影 */
+.yinying {
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.daohang {
+  padding: 10px 20px;
+  border-bottom: 1px solid grey;
+  font-size: 14px;
+  color: blueviolet;
+}
+
+/* 当屏幕宽度小于600px时要改变的css */
+@media (max-width: 600px) {
+  .cebian {
+    display: none;
+  }
+
+  .neirong {
+    flex-direction: column;
+  }
+
+  .shujuqu {
+    flex-direction: column;
+  }
+
+  .youqu {
+    margin-left: 8px;
+  }
+
+  .shuju {
+    margin: 0 0 8px;
+    flex: auto;
+  }
+}
+
+.neirong::-webkit-scrollbar {
+  display: none;
+}
