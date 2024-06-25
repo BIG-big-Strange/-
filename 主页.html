@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1</title>
-  <link href="styles/style.css" rel="stylesheet" />
-  <link rel="icon" href="/favicon_logosc/favicon.ico">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>主页</title>
+  <link href="./styles/style.css" rel="stylesheet" />
+  <link rel="icon" href="./favicon_logosc/favicon.ico">
+  <script type="text/javascript" src="1.js"></script>
 
 <body>
 
@@ -18,7 +21,7 @@
     <source src="background.mp4" type="video/mp4">
   </video>
   <!-- 侧边栏 -->
-  <div style="width: 230px;z-index: 2;" class="cebian baise yinying">
+  <div style="z-index: 2;" class="felx1 cebian baise yinying">
     <!-- 头像栏 -->
     <div style="padding: 10px;align-items: center;justify-content: center;border-bottom: 1px solid #999;" class="flex">
       <img src="favicon_logosc\apple-touch-icon.png" width="40px" height="40px" alt="头像">
@@ -26,10 +29,12 @@
     <!-- 导航栏 -->
     <div class="daohang">
       <button class="learn-more">
-        <span class="circle" aria-hidden="true">
-          <span class="icon arrow"></span>
-        </span>
-        <span class="button-text">导航栏</span>
+        <a href="/计算器/index.html">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">计算器</span>
+        </a>
       </button>
     </div>
     <div class="daohang">
@@ -59,10 +64,14 @@
 
   </div>
   <!-- 主区域 -->
-  <div class="flex1 flex column">
+  <div style="width: 1060px;" class="flex1 flex column">
     <!-- 头部栏 -->
-    <div style="height: 80px;z-index: 1;text-align: center;color: #ff0000;" class="baise yinying mgl8">
-      <h1>广告招租</h1>
+    <div style="height: 80px;z-index: 1;text-align: center;justify-content: end;" class="flex baise yinying mgl8">
+      <h1 style="margin: auto 50vh;color: #ff0000;">主页</h1>
+      <button style="height: 20px;margin: auto 10px;" type="button" class="mg8">
+        <i onclick="change()">确定</i>
+      </button>
+      <input style="height: 20px;margin: auto 0;margin-right: 10px;" id="srk" placeholder="名字">
     </div>
     <!-- 内容区 -->
     <div style="overflow: auto;" class="neirong flex1 flex">
@@ -100,11 +109,31 @@
       </div>
     </div>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register(sw.js);
-        });
+      // if ('serviceWorker' in navigator) {
+      //   window.addEventListener('load', function () {
+      //     navigator.serviceWorker.register(sw.js);
+      //   });
+      // }
+      let youmz = false;
+      function change() {
+         
+        let srk = document.getElementById("srk");
+        if(youmz){
+          // window.location = "/520/520.html";
+          youmz = false;
+          // window.localStorage.removeItem('mz');
+        }else{
+          youmz = true;
+          window.localStorage.setItem("mz", srk.value);
+        }
+        
       }
+
+      let data = window.localStorage.getItem("mz");
+      // if (data) {
+      //  document.getElementById("srk").value = data;
+      //  change();
+      // }
     </script>
 </body>
 
